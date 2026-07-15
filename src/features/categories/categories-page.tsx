@@ -6,7 +6,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { fetchCategories } from "@/services/dummyjson";
+import { fetchCategories } from "@/services/payload";
 import {
   Search,
   Sparkles,

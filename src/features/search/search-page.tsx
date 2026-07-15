@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/container";
 import { Input } from "@/components/ui/input";
-import { fetchProductsForQuery, type Product } from "@/services/dummyjson";
+import { fetchProductsForQuery, type Product } from "@/services/payload";
 import { ArrowRight, Search } from "lucide-react";
 
 interface SearchPageProps {

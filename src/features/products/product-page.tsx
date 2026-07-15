@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
-import { fetchProductById, type Product } from "@/services/dummyjson";
+import { fetchProductById, type Product } from "@/services/payload";
 import { ArrowLeft } from "lucide-react";
 
 interface ProductPageProps {

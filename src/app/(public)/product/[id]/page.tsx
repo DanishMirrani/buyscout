@@ -1,5 +1,5 @@
 import { ProductPage } from "@/features/products";
-import { fetchProductById, fetchProductsForQuery } from "@/services/dummyjson";
+import { fetchProductById } from "@/services/payload";
 import type { Metadata } from "next";
 
 interface ProductPageProps {
@@ -8,15 +8,6 @@ interface ProductPageProps {
 
 // ISR: revalidate every 24 hours
 export const revalidate = 86400;
-
-// Pre-render the first 20 products at build time (SSG)
-export async function generateStaticParams() {
-  const products = await fetchProductsForQuery("");
-
-  return products.slice(0, 20).map((product) => ({
-    id: String(product.id),
-  }));
-}
 
 // Dynamic metadata per product for SEO
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {

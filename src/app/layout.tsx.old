@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 // 2. Internal Aliased Components and Context Providers
-import { AppLayout } from "@/components/layout/app-layout";
 import { Providers } from "@/providers/providers";
 import { siteConfig } from "@/config/site";
 
@@ -27,7 +26,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
     <html
       lang="en"
       suppressHydrationWarning
@@ -35,9 +33,7 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <AppLayout>
-            {children}
-          </AppLayout>
+          {children}
         </Providers>
       </body>
     </html>

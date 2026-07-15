@@ -1,5 +1,4 @@
 import { CategoryPage } from "@/features/categories/category-page";
-import { fetchCategories } from "@/services/dummyjson";
 import type { Metadata } from "next";
 
 interface CategoryRouteProps {
@@ -10,15 +9,6 @@ interface CategoryRouteProps {
 
 // ISR: revalidate every 24 hours
 export const revalidate = 86400;
-
-// Pre-render all category pages at build time (SSG)
-export async function generateStaticParams() {
-  const categories = await fetchCategories();
-
-  return categories.map((category) => ({
-    category,
-  }));
-}
 
 // Dynamic metadata per category for SEO
 export async function generateMetadata({ params }: CategoryRouteProps): Promise<Metadata> {

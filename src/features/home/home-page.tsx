@@ -25,7 +25,7 @@ import {
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { fetchCategories, fetchProductsForQuery, type Product } from "@/services/dummyjson";
+import { fetchCategories, fetchProductsForQuery, type Product } from "@/services/payload";
 import { ArrowRight, Search, Sparkles, SprayCan, Sofa, ShoppingBasket, Palette, CookingPot } from "lucide-react";
 
 export function HomePage() {

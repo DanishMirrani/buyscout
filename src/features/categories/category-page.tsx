@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/layout/container";
-import { fetchProductsByCategory, type Product } from "@/services/dummyjson";
+import { fetchProductsByCategory, type Product } from "@/services/payload";
 import { ArrowRight } from "lucide-react";
 
 interface CategoryPageProps {
