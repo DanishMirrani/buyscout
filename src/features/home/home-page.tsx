@@ -282,7 +282,7 @@ export function HomePage() {
                                 onChange={(event) => handleInputChange(event.target.value)}
                                 onKeyDown={handleInputKeyDown}
                                 onFocus={handleInputFocus}
-                                placeholder="Search products, brands, or categories"
+                                placeholder="Search products, or categories"
                                 className="h-11 rounded-2xl pl-9"
                                 role="combobox"
                                 aria-expanded={showFloating}
