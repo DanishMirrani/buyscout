@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "payload": "payload",
-    "seed:products": "tsx seed-local.mts",
-    "postinstall": "patch-package"
+    "seed:products": "tsx seed-local.mts"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.20",
