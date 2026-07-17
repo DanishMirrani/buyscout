@@ -22,5 +22,5 @@ jobs:
             cd ${{ secrets.APP_PATH }}
             git pull origin main
             pnpm install
-            pnpm rebuild
+            pnpm build
             pm2 restart payload-app
