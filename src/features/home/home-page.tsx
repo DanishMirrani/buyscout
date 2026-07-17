@@ -330,8 +330,8 @@ export function HomePage() {
                                                             role="option"
                                                             aria-selected={activeIndex === i}
                                                             tabIndex={-1}
-                                                            onClick={() => handleCategorySelect(category)}
                                                             {...getItemProps()}
+                                                            onClick={() => handleCategorySelect(category)}
                                                         >
                                                             {category}
                                                         </Button>
@@ -360,8 +360,8 @@ export function HomePage() {
                                                                 aria-selected={activeIndex === itemIndex}
                                                                 tabIndex={-1}
                                                                 className="flex cursor-pointer items-center justify-between rounded-2xl border border-border/70 bg-background px-4 py-3 text-left transition-colors hover:border-primary/40 hover:bg-primary/5"
-                                                                onClick={() => handleProductSelect(product.id)}
                                                                 {...getItemProps()}
+                                                                onClick={() => handleProductSelect(product.id)}
                                                             >
                                                                 <div>
                                                                     <p className="text-sm font-medium">{product.title}</p>

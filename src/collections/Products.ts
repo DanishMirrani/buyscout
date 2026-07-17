@@ -59,17 +59,15 @@ export const Products: CollectionConfig = {
     },
     {
       name: "thumbnail",
-      type: "upload",
-      relationTo: "media",
+      type: "text",
     },
     {
       name: "images",
       type: "array",
       fields: [
         {
-          name: "image",
-          type: "upload",
-          relationTo: "media",
+          name: "url",
+          type: "text",
         },
       ],
     },

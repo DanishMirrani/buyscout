@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "payload": "payload"
+    "payload": "payload",
+    "seed:products": "tsx seed-local.mts",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.20",
@@ -36,10 +38,12 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
+    "@next/env": "15.5.20",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "husky": "^9.1.7",

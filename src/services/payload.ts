@@ -1,4 +1,13 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const getApiUrl = () => {
+  if (typeof window !== "undefined") {
+    const isLocalhost = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+    if (!isLocalhost && process.env.NEXT_PUBLIC_API_URL) {
+      return process.env.NEXT_PUBLIC_API_URL;
+    }
+    return "";
+  }
+  return process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+};
 
 interface PayloadProduct {
   id: number;
@@ -10,8 +19,8 @@ interface PayloadProduct {
   stock: number | null;
   brand: string | null;
   category: { id: number; title: string; slug: string } | number | null;
-  thumbnail: { id: number; url: string; alt: string } | number | null;
-  images?: { image: { id: number; url: string; alt: string } | number | null }[] | null;
+  thumbnail: string | null;
+  images?: { url: string }[] | null;
   tags?: string[] | null;
   createdAt: string;
   updatedAt: string;
@@ -53,6 +62,7 @@ interface PayloadCategoriesResponse {
 }
 
 async function fetchAPI<T>(path: string, options?: RequestInit): Promise<T> {
+  const API_URL = getApiUrl();
   const response = await fetch(`${API_URL}${path}`, {
     headers: {
       "Content-Type": "application/json",
@@ -89,16 +99,13 @@ function normalizeProduct(p: PayloadProduct): Product {
         ? String(p.category)
         : "Uncategorized";
 
-  const thumbnailUrl =
-    p.thumbnail && typeof p.thumbnail === "object"
-      ? p.thumbnail.url
-      : "/placeholder.svg";
+  const thumbnailUrl = p.thumbnail || "/placeholder.svg";
 
   const images: string[] = [];
   if (p.images && Array.isArray(p.images)) {
     for (const img of p.images) {
-      if (img?.image && typeof img.image === "object") {
-        images.push(img.image.url);
+      if (img?.url) {
+        images.push(img.url);
       }
     }
   }

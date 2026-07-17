@@ -82,7 +82,7 @@ export function ProductPage({ productId }: ProductPageProps) {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="overflow-hidden rounded-3xl border border-border/70 bg-background p-3">
             <Image
-              src={product.thumbnail}
+              src={product.images[0] ?? product.thumbnail}
               alt={product.title}
               width={1200}
               height={900}
